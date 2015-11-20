@@ -146,13 +146,13 @@ public class ChequeaColisionBasico extends acm.program.GraphicsProgram{
 
 	/*
 	 * chequeaLadrillos comprueba chequeaPosicion con las coordenadas de la
-	 * pelota e introduce el valor de marcador en el panel
+	 * pelota 
 	 */
 	private void chequeaLadrillos() {
 
 		int pelotaX = (int) pelota.getX();
 		int pelotaY = (int) pelota.getY();
-		int lado = alto_pelota / 2;
+		int lado = alto_pelota;
 
 		// si chequea posicion devuelve false sigue mirando el resto de puntos
 		//de la pelota
@@ -160,9 +160,7 @@ public class ChequeaColisionBasico extends acm.program.GraphicsProgram{
 		if( !chequeaPosicion(pelotaX, pelotaY,'y')){
 			if( !chequeaPosicion(pelotaX+lado, pelotaY-1,'y')){
 				if( !chequeaPosicion(pelotaX-1, pelotaY+lado,'x')){
-					if( !chequeaPosicion(pelotaX, pelotaY+2*lado,'y')){
-						if( !chequeaPosicion(pelotaX+2*lado, pelotaY+2*lado,'y')){
-						}
+					if( !chequeaPosicion(pelotaX+lado, pelotaY+lado,'y')){
 					}
 				}
 			}
@@ -173,7 +171,7 @@ public class ChequeaColisionBasico extends acm.program.GraphicsProgram{
 
 	/**
 	 * chequeaPosicion dadas unas cordenadas (posX y posY)de la pelota y una
-	 * direccion, teniendo en cuenta el objeto que se encuentra en esas
+	 * direccion, calcula el rebote teniendo en cuenta el objeto que se encuentra en esas
 	 * coordenadas.
 	 * 
 	 */
