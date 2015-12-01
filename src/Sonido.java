@@ -1,19 +1,21 @@
 //Reproducir un MP3 en Java 
 
-import java.io.FileInputStream;
+import java.applet.AudioClip;
 
-import javazoom.jl.player.Player;
+import acm.util.SoundClip;
 
 public class Sonido extends acm.program.GraphicsProgram {
 
 
+	
+	
 	public void run() {
 
-		try {
-			Player reproductor = new Player(new FileInputStream("rayo.mp3"));
-			reproductor.play();
-		} catch (Exception e) {
-			println("NO FUNCIONA!");
-		}
+		SoundClip miSonido = new SoundClip("rayo.mp3");
+		miSonido.play();
+		
+
 	}
+	
+
 }
