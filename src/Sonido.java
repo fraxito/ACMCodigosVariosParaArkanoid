@@ -1,23 +1,19 @@
-import javafx.scene.media.Media.*;
-import javafx.scene.media.MediaPlayer.*;
+//Reproducir un MP3 en Java 
+
+import java.io.FileInputStream;
+
+import javazoom.jl.player.Player;
+
+public class Sonido extends acm.program.GraphicsProgram {
 
 
-import javax.sound.sampled.AudioInputStream;
+	public void run() {
 
-import acmx.export.java.io.FileInputStream;
-public class Sonido extends acm.program.GraphicsProgram{
-
-	public void run(){
-		String bip = "bip.mp3";
-		Media hit = new Media(bip);
-		MediaPlayer mediaPlayer = new MediaPlayer(hit);
-		mediaPlayer.play();
 		try {
-			InputStream ficheroEntrada = new FileInputStream("/sonido1.mp3");
-			AudioInputStream cancion = new AudioInputStream(arg0, arg1, arg2)
+			Player reproductor = new Player(new FileInputStream("rayo.mp3"));
+			reproductor.play();
 		} catch (Exception e) {
+			println("NO FUNCIONA!");
 		}
-		
 	}
-	
 }
